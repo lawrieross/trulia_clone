@@ -1,0 +1,87 @@
+/* Navigation */
+
+[data-nav-links] {
+    background-color: $secondary-green;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1s cubic-bezier(0,1,0,1);
+}
+
+.b-nav {
+    background-color: $primary-green;
+    color: $white;
+
+    &--is-expanded {
+        max-height: 9999px;
+        transition: all 3s ease-in-out;
+    }
+
+    &__logo {
+        padding: 16px;
+
+        a {
+            color: $white;
+        }
+    }
+
+    &__hamburger-menu {
+        cursor: pointer;
+        padding: 16px;
+    }
+
+    li {
+        padding: 8px 16px;
+
+        &:first-child {
+            padding: 16px 16px 8px;
+        }
+
+        &:last-child {
+            padding: 8px 16px 16px;
+        }
+    }
+
+    &__link {
+        color: $white;
+        position: relative;
+
+        &::after {
+            border-bottom: 2px $white solid;
+            bottom: -8px;
+            content: '';
+            display: block;
+            left: 0;
+            position: absolute;
+            width: 0;
+            -webkit-transition: 0.5s ease;
+            transition: 0.5s ease;
+        }
+        
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .b-nav {
+        [data-nav-links] {
+            display: flex;
+            max-height: initial;
+        }
+
+        li {
+            background-color: $primary-green;
+            padding: 16px;
+
+            &:first-child,
+            &:last-child {
+                padding: 16px;
+            }
+        }
+
+        &__hamburger-menu {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+/* Footnote */
+
+.b-footnote {
+    background-color: $white;
+
+    &__heading {
+        color:$primary-grey;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    &__link {
+        color: $primary-green;
+
+        &:hover {
+            color: $dark-green;
+        }
+    }
+}
+
+.b-site-map {
+    background-color: $primary-grey;
+    color: $white;
+
+    &__items {
+        a {
+            color: $secondary-grey;
+
+            &:hover {
+                color: $white;
+            }
+        }
+
+        span {
+            color: $secondary-grey;
+            font-size: 16px;
+            padding: 0 4px;
+        }
+    }
+}
+
+.b-site-map {
+    &__disclaimer {
+        display: block;
+        
+        p {
+            color: $secondary-grey;
+            font-size: 14px;
+        }        
+    }
+}
+
+.house-icon {
+    color: $white;
+    padding: 0 2px;
+}

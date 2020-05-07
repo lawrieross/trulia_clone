@@ -1,0 +1,29 @@
+<nav class="b-nav">
+    <div class="container">
+        <div class="row row-bleed between-xs middle-xs start-md">
+            <div class="col-xs-auto col-md-auto b-nav__logo">
+                <%= link_to '<h1><i class="fas fa-map-marker-alt"></i> trulia</h1>'.html_safe, root_path %>
+            </div>
+            <div class="col-xs-auto col-md-auto b-nav__hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="col-xs-12 col-md-auto col-bleed" data-nav-links="">
+                <li>
+                    <%= link_to 'Buy', '#', class: 'b-nav__link' %>
+                </li>
+                <li>
+                    <%= link_to 'Rent', '#', class: 'b-nav__link' %>
+                </li>
+                <li>
+                    <%= link_to 'Mortgage', '#', class: 'b-nav__link' %>
+                </li>
+                <li>
+                    <%= link_to 'Local Scoop', '#', class: 'b-nav__link' %>
+                </li>
+                <li>
+                    <%= link_to 'More', '#', class: 'b-nav__link' %>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

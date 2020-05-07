@@ -1,0 +1,97 @@
+<!-- Section Heading -->
+<header class="b-heading">
+    <div class="container">
+        <div class="row between-xs">
+            <div class="col-xs-auto">
+                <strong>Homes For Sale & Real Estate in 20010</strong>
+                <span class="b-heading__results"><%= @pagy.count %> homes  available on Trulia</span>
+            </div>
+            <div class="col-xs-auto">
+                <%= sortable 'price' %>
+                <%= sortable 'bedrooms' %>
+                <%= sortable 'bathrooms' %>
+                <%= sortable 'area', 'Size' %>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section class="row">
+        <% @listings.each do |l| %>
+            <section class="col-xs-12 col-md-6 col-lg-4">
+                <a href="#">
+                    <div class="b-listing">
+                        <%= l.new_listing %>
+                        <%= l.for_sale %>
+                        <%= image_tag(l.feature_image_path, alt: l.name, class: 'b-listing__image') %>
+                        <ul class="b-listing__details">
+                            <li class="b-listing__price">$<%= number_with_delimiter(l.derived_price, :delimiter => ',') %></li>
+                            <%= l.price_arrow %>
+                            <li class="b-listing__stats">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-bed"></i>
+                                    </li>
+                                    <li class="b-listing__info"><%= l.derived_bedrooms %>bd</li>
+                                    <li>
+                                        <i class="fas fa-bath"></i>
+                                    </li>
+                                    <li class="b-listing__info"><%= l.derived_bathrooms %>ba</li>
+                                    <% if l.area %>
+                                        <li class="b-listing__info"><%= l.derived_area %> sqft</li>
+                                    <% end %>
+                                </ul>
+                            </li>
+                            <li class="b-listing__address">
+                                <%= l.address %>
+                                <br>
+                                <%= l.town %>, <%= l.city %>, <%= l.state %>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+            </section>
+        <% end %>
+    </section>
+</main>
+
+<section class="b-nav-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <%== pagy_nav(@pagy) %>
+            </div>
+            <div class="col-xs-12">
+                <p class="b-nav-bottom__breadcrumbs">
+                    <a href="#" class="b-nav-bottom__location">United States</a>
+                    <span class="b-nav-bottom__arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                    <a href="#" class="b-nav-bottom__location">District Of Columbia</a>
+                    <span class="b-nav-bottom__arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                    <a href="#" class="b-nav-bottom__location">Washington</a>
+                    <span class="b-nav-bottom__arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                    <a class="b-nav-bottom__location is-active">20010</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="b-footnote">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p class="b-footnote__heading">20010 Real Estate Insights</p>
+                <p>ZIP code 20010 is located in Washington, District of Columbia.</p>
+                <p>The plethora of grocery stores in ZIP code 20010 makes it easy to stock up on specialty foods,   like organic and gluten-free options, without having to leave the area. There is <a href="https://www.trulia.com/real_estate/20010-Washington/" class="b-footnote__link">easy access to public transportation</a>, which is the preferred way to travel here due to its ease of use and abundant travel options. Bicycles are big sellers in ZIP code 20010; everyone seems to be riding these days, whether it's for the daily commute or a fun afternoon with the family.</p>
+                <p>Many houses in ZIP code 20010 are historic with one-of-a-kind architecture, and it's clear to see why it's so important to maintain them and keep history living on. This year, the average listing price grew to $658,471  in this locale, a noticeable appreciation of 12.5 percent from $585,528 the year prior. During the same period, inventory is noticeably increasing in this locale year-over-year, with a 20 percent increase in for-sale listings last year alone. Enjoy a cozy night by the fire, as many residences here come equipped with authentic fireplaces. ZIP code 20010 has some great historic estates so if you move to one of these homes, you'll be inheriting a piece of history. If you enjoy a view and the ability to see far and wide, <a href="https://www.trulia.com/for_sale/20010_zip/penthouse_keyword/" class="b-footnote__link">consider a penthouse</a> in this place for an unparalleled experience.</p>
+            </div>
+        </div>
+    </div>
+</section>

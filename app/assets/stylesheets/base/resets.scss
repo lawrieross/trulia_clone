@@ -1,0 +1,42 @@
+/* Resets */
+
+body {
+    background-color: #e8e9ea;
+    font-family: 'Lato', sans-serif;
+}
+
+body,
+h1,
+p,
+ul {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+ul {
+    padding: 0;
+}
+
+.fa-arrow-down {
+    color: $primary-green;
+}
+
+.fa-arrow-up {
+    color: $primary-red;
+}
+
+.fa-bars {
+    font-size: 24px;
+}
